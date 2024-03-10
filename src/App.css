@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Markazi Text", serif;
+  font-size: 18px;
+  background-color: #495e57;
+}
+
+/* Typography */
+
+a {
+  color: black;
+  font-size: 1.5rem;
+}
+
+h1 {
+  color: #f4ce14;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.section-subtitle {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.section-text {
+  color: white;
+  font-size: 1rem;
+  font-family: "Karla", sans-serif;
+}
+
+button {
+  font-weight: bold;
+  background-color: #f4ce14;
+}
+
+.article.text {
+  color: #495e57;
+}
+
+/* Layout  */
+
+header {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  padding-top: 0.5em;
+}
+
+.section-article {
+  background-color: white;
+}
+
+article {
+  background-color: #edefee;
+}
+
+img {
+  width: 100%;
+}
