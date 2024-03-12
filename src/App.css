@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   text-align: center;
@@ -17,6 +21,7 @@ h1 {
   color: #f4ce14;
   font-weight: 900;
   font-size: 3rem;
+  margin-top: 1;
 }
 
 h2 {
@@ -31,23 +36,44 @@ h2 {
 
 .section-text {
   color: white;
-  font-size: 1rem;
+
   font-family: "Karla", sans-serif;
 }
 
 button {
-  font-weight: bold;
+  font-weight: 700;
   background-color: #f4ce14;
+  font-size: 1rem;
 }
 
-.article.text {
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.price {
+  color: #ee9972;
+  font-weight: 700;
+  margin: 0;
+}
+
+.article-text {
   color: #495e57;
+}
+
+.order {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0 0 1em 0;
 }
 
 /* Layout  */
 
 header {
   background-color: white;
+  margin-bottom: 2em;
 }
 
 a {
@@ -59,6 +85,11 @@ li {
   padding-top: 0.5em;
 }
 
+ul {
+  padding: 0 0 1em 0;
+  margin-top: 0;
+}
+
 .section-article {
   background-color: white;
 }
@@ -67,6 +98,97 @@ article {
   background-color: #edefee;
 }
 
+.section-subtitle,
+h1 {
+  margin: 0;
+}
+
+button {
+  margin-bottom: 3em;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border-color: transparent;
+}
+
 img {
   width: 100%;
+}
+
+.section-header img,
+article img {
+  height: 40vh;
+  object-fit: cover;
+}
+
+h2 {
+  padding: 0.5em;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+footer > ul > li > a {
+  color: #fff;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+  nav > ul {
+    display: flex;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
+
+  ul {
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0;
+  }
+
+  img {
+    width: 25vw;
+  }
+
+  .header-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  .section-header,
+  .article-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-container {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+  }
 }
