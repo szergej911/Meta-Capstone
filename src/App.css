@@ -173,8 +173,7 @@ footer > ul > li > a {
     text-decoration: underline;
   }
 
-  .section-header,
-  .article-container {
+  .section-header {
     max-width: 700px;
     margin: 0 auto;
   }
@@ -190,5 +189,27 @@ footer > ul > li > a {
     flex-direction: column;
     justify-content: center;
     width: 35%;
+  }
+
+  .article-piece {
+    max-width: 25vh;
+  }
+
+  article img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .article-flex {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  footer {
+    max-width: 700px;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom: 2.5em;
   }
 }
