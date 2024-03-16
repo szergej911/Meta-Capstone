@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BookingForm({ availableTimes, updateTimes, dispatch }) {
   const [date, setDate] = useState("");
   const [guests, setGuest] = useState("");
   const [occasion] = useState(["Anniversary", "Birthday"]);
+
+  const navigate = useNavigate();
 
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
@@ -12,9 +15,17 @@ export default function BookingForm({ availableTimes, updateTimes, dispatch }) {
     dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/confirmation");
+  };
+
   return (
     <div>
-      <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      >
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"
@@ -38,7 +49,7 @@ export default function BookingForm({ availableTimes, updateTimes, dispatch }) {
         <input
           type="number"
           value={guests}
-          onChange={(e) => setGuests(e.target.value)}
+          onChange={(e) => setGuest(e.target.value)}
           placeholder="1"
           min="1"
           max="10"

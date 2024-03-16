@@ -21,10 +21,6 @@ export default function BookingPage() {
     // Placeholder function to update times
   };
 
-  const initializeTimes = () => {
-    return ["18:00", "19:00", "20:00", "21:00", "22:00"];
-  };
-
   return (
     <div>
       <Header />

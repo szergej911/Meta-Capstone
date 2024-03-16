@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Main() {
   return (
     <main>
@@ -9,7 +11,9 @@ export default function Main() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button className="button-reserve">Reserve a Table</button>
+          <Link to="/reservations" className="button-reserve">
+            Reserve a Table
+          </Link>
         </div>
         <img
           src="./public/restauranfood.jpg"
