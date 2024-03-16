@@ -1,9 +1,16 @@
 import { useState } from "react";
 
-export default function BookingForm({ availableTimes }) {
+export default function BookingForm({ availableTimes, updateTimes, dispatch }) {
   const [date, setDate] = useState("");
   const [guests, setGuest] = useState("");
   const [occasion] = useState(["Anniversary", "Birthday"]);
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    updateTimes(selectedDate);
+    dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
+  };
 
   return (
     <div>
@@ -13,7 +20,7 @@ export default function BookingForm({ availableTimes }) {
           type="date"
           value={date}
           id="res-date"
-          onChange={(e) => setDate(e.target.value)}
+          onChange={handleDateChange}
         />
         <label htmlFor="res-time">Choose time</label>
         <select
@@ -31,7 +38,7 @@ export default function BookingForm({ availableTimes }) {
         <input
           type="number"
           value={guests}
-          onChange={(e) => setGuest(e.target.value)}
+          onChange={(e) => setGuests(e.target.value)}
           placeholder="1"
           min="1"
           max="10"

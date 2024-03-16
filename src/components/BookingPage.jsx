@@ -1,18 +1,25 @@
 import BookingForm from "./BookingForm";
 import Footer from "./Footer";
 import Header from "./Header";
-import { useState } from "react";
+import { useReducer } from "react";
+
+const initialState = ["18:00", "19:00", "20:00", "21:00", "22:00"];
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_TIMES":
+      return state;
+    default:
+      return state;
+  }
+};
 
 export default function BookingPage() {
-  const [availableTimes] = useState([
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  const [availableTimes, dispatch] = useReducer(reducer, initialState);
 
-  const updateTimes = () => {};
+  const updateTimes = () => {
+    // Placeholder function to update times
+  };
 
   const initializeTimes = () => {
     return ["18:00", "19:00", "20:00", "21:00", "22:00"];
@@ -21,7 +28,11 @@ export default function BookingPage() {
   return (
     <div>
       <Header />
-      <BookingForm availableTimes={availableTimes} />
+      <BookingForm
+        availableTimes={availableTimes}
+        updateTimes={updateTimes}
+        dispatch={dispatch}
+      />
       <Footer />
     </div>
   );
